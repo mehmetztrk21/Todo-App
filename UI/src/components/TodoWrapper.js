@@ -25,7 +25,7 @@ export const TodoWrapper = () => {
       else setTodos([]);
     }).catch((error) => {
       alert('Hata oluştu!');
-      console.log(error);
+      alert(error.response?.data || 'Hata oluştu!');
     });
   }
   const addTodo = async (todo) => {
@@ -39,7 +39,7 @@ export const TodoWrapper = () => {
       else alert('Hata oluştu!');
     }).catch((error) => {
       console.log(error);
-      alert('Hata oluştu!');
+      alert(error.response?.data || 'Hata oluştu!');
     });
   }
 
@@ -51,7 +51,7 @@ export const TodoWrapper = () => {
       else alert('Hata oluştu!');
     }).catch((error) => {
       console.log(error);
-      alert('Hata oluştu!');
+      alert(error.response?.data || 'Hata oluştu!');
     });
   }
 
@@ -69,7 +69,7 @@ export const TodoWrapper = () => {
       else alert('Hata oluştu!');
     }).catch((error) => {
       console.log(error);
-      alert('Hata oluştu!');
+      alert(error.response?.data || 'Hata oluştu!');
     });
 
   }
@@ -94,7 +94,7 @@ export const TodoWrapper = () => {
       else alert('Hata oluştu!');
     }).catch((error) => {
       console.log(error);
-      alert('Hata oluştu!');
+      alert(error.response?.data || 'Hata oluştu!');
     });
   };
   const logOut = () => {

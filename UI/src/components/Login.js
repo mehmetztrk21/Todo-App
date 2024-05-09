@@ -15,20 +15,21 @@ export const Login = () => {
                 localStorage.setItem('userId', response.data?.Id);
                 navigate('/');
             }
-            else setError('Kullanıcı adı veya şifre hatalı');
+            else setError(response.data || 'Hata oluştu');
         }).catch((error) => {
-            setError('Hata oluştu!');
+            setError(error.response?.data || 'Hata oluştu');
         });
     };
     const handleRegister = async () => {
         await api.post('/auth/register', { username, password }).then((response) => {
+            console.log(response);
             if (response.status == 201) {
                 localStorage.setItem('userId', response.data?.user?.Id);
                 navigate('/');
             }
-            else setError('Hata oluştu!');
+            else setError(response.data || 'Hata oluştu');
         }).catch((error) => {
-            setError('Hata oluştu!');
+            setError(error.response?.data || 'Hata oluştu');
         });
     }
     useEffect(() => {
