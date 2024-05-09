@@ -10,7 +10,7 @@ export const Login = () => {
     const navigate = useNavigate();
 
     const handleLogin = async () => {
-        await api.post('/login', { username, password }).then((response) => {
+        await api.post('/auth/login', { username, password }).then((response) => {
             if (response.status == 200) {
                 localStorage.setItem('userId', response.data?.Id);
                 navigate('/');
@@ -21,7 +21,7 @@ export const Login = () => {
         });
     };
     const handleRegister = async () => {
-        await api.post('/register', { username, password }).then((response) => {
+        await api.post('/auth/register', { username, password }).then((response) => {
             if (response.status == 201) {
                 localStorage.setItem('userId', response.data?.user?.Id);
                 navigate('/');
